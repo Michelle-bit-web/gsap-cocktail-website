@@ -30,21 +30,6 @@ const Menu = () => {
         gsap.fromTo('.details p', {yPercent: 100, opacity: 0}, {yPercent: 0, opacity: 1, duration: 1, ease: 'power1.inOut'});
     }, [currentIndex]);
 
-    useGSAP(() => {
-        const parallaxTimeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: '#menu',
-                start: 'top 30%',
-                end: 'bottom 80%',
-                scrub: true,
-            }
-        })
-
-        parallaxTimeline
-            .from('#m-left-leaf', {x: -100, y: 100})
-            .from('#m-right-leaf', {x: 100, y: 100})
-    })
-
     return (
         <section id="menu" aria-labelledby="menu-heading">
             <img src="/images/slider-left-leaf.png" alt="left-leaf" id="m-left-leaf"/>
